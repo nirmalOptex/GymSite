@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Gym Replica</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+     <!-- FontAwesome CDN -->
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+    <style>
+        /* Transparent Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .navbar .nav-link {
+            color: #ffffff; /* White text for navbar links */
+        }
+
+        .navbar .nav-link:hover {
+            color: #D11A2A; /* Highlight color on hover */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('/images/background.png') center/cover no-repeat;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            color: #fff;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding-top: 30vh; /* Centers content vertically */
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .btn-find-gym {
+            background-color: #D11A2A;
+            color: white;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-find-gym:hover {
+            background-color: #a31620;
+            color: white;
+        }
+
+        /* Next Section */
+        .next-page {
+            height: 100vh;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .next-page h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+.next-page h6 {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.next-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+form input {
+    border: 2px solid #D11A2A;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    background-color: #a31620;
+    border-color: #a31620;
+}
+/* Find a Gym Container */
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    padding: 20px;
+}
+
+.find-gym-container h1 {
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+form input {
+    border: 2px solid #D11A2A;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+
+
+        /* Scroll Down Icon */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        .h6{
+            margin: 0 auto;
+        }
+     
+    </style>
+</head>
+<body>
+
+    <!-- Transparent Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/images/jaycutler.png" alt="World Gym Logo" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Gyms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Training</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-danger text-white" href="#"><img src="/images/Group 1.png" height="100px" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content container">
+            <h1>BUILDING THE NEXT GENERATION OF LEGENDS</h1>
+            <a href="#next-page" class="btn btn-find-gym mt-4">Find a Gym Near You</a>
+        </div>
+        <!-- Scroll Down Icon -->
+        <a href="#next-page" class="scroll-down">↓</a>
+    </section>
+
+    <!-- Next Page Section -->
+    <section id="next-page" class="next-page text-center">
+        <div class="container">
+            <h6>Find Your</h6>
+            <h1 class="mb-4">LOCAL WORLD GYM</h1>
+            <form action="#" method="POST" class="d-flex justify-content-center align-items-center">
+                <input type="text" class="form-control w-50" placeholder="Enter City or Zip Code*" required>
+                <button type="submit" class="btn btn-danger ms-2">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+<!-- Why World Gym Section -->
+<section class="why-world-gym py-5 text-white" style="background-color: #000;">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-5">WHY WORLD GYM</h2>
+        <div class="row">
+            <!-- Legacy -->
+            <div class="col-md-3 mb-4">
+                <div class="why-item">
+                    <div class="why-icon mb-3 position-relative d-inline-block rounded-circle overflow-hidden" style="width: 110px; height: 110px; background-color: #dc3545;">
+                        <!-- Placeholder for image -->
+                        <img src="/images/globe.png" alt="Globe" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <h4 class="fw-bold mt-3">Legacy</h4>
+                    <p>Over the last 46 years, our iconic gym brand has set the standard for all others to follow. Legends have been made here since 1976. Now it's your turn.</p>
+                </div>
+            </div>
+            <!-- Environment -->
+            <div class="col-md-3 mb-4">
+                <div class="why-item">
+                    <div class="why-icon mb-3 position-relative d-inline-block rounded-circle overflow-hidden" style="width: 110px; height: 110px; background-color: #dc3545;">
+                        <!-- Placeholder for image -->
+                        <img src="/images/globe.png" alt="Globe" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <h4 class="fw-bold mt-3">Environment</h4>
+                    <p>We provide a safe, secure, and comfortable environment to train in no matter what your experience or fitness level is.</p>
+                </div>
+            </div>
+            <!-- Results -->
+            <div class="col-md-3 mb-4">
+                <div class="why-item">
+                    <div class="why-icon mb-3 position-relative d-inline-block rounded-circle overflow-hidden" style="width: 110px; height: 110px; background-color: #dc3545;">
+                        <!-- Placeholder for image -->
+                        <img src="/images/globe.png" alt="Globe" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <h4 class="fw-bold mt-3">Results</h4>
+                    <p>If you're serious about achieving a goal, we are your gym. From the best equipment to fitness professionals, we're here for results.</p>
+                </div>
+            </div>
+            <!-- Experience -->
+            <div class="col-md-3 mb-4">
+                <div class="why-item">
+                    <div class="why-icon mb-3 position-relative d-inline-block rounded-circle overflow-hidden" style="width: 110px; height: 110px; background-color: #dc3545;">
+                        <!-- Placeholder for image -->
+                        <img src="/images/globe.png" alt="Globe" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <h4 class="fw-bold mt-3">Experience</h4>
+                    <p>Remarkable customer service, a safe, clean, and comfortable environment awaits you at your local World Gym.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Find a Gym Section -->
+<div class="container-fluid my-5">
+    <div class="row align-items-center justify-content-center">
+        <!-- Left Section -->
+        <div class="col-lg-6 p-5 text-center text-white" style="
+            background: url('images/globe-background.png') center/cover no-repeat, #d61f26;
+            height: 540px;">
+            <h1 class="fw-bold display-4 mb-4">FIND A <br> GYM NEAR <br> YOU</h1>
+            <form>
+                <input type="text" class="form-control w-75 mx-auto mb-3" placeholder="Enter Zip *" required>
+                <button type="submit" class="btn btn-dark px-5 py-2">SUBMIT</button>
+            </form>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-lg-6 p-4 d-flex flex-column gap-4">
+            <!-- Training Tips -->
+            <div class="card border-0 shadow-sm position-relative">
+                <img src="/images/image1.png" alt="Training Tips" class="img-fluid">
+                <div class="card-img-overlay d-flex flex-column justify-content-end text-white bg-dark bg-opacity-50">
+                    <h2 class="fw-bold">Training Tips</h2>
+                    <p class="text-decoration-underline">LET'S GO!</p>
+                </div>
+            </div>
+
+            <!-- New Products Back in Stock -->
+            <div class="card border-0 shadow-sm position-relative">
+                <img src="/images/image2.jpg" alt="New Products" class="img-fluid">
+                <div class="card-img-overlay d-flex flex-column justify-content-end text-white bg-dark bg-opacity-50">
+                    <h2 class="fw-bold">New Products Back in Stock</h2>
+                    <p class="text-decoration-underline">SHOP NOW</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="text-white" style="background-color: #000;">
+    <!-- Subscription Form Section -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-uppercase">Stay Informed & Get Fit</h2>
+            <p class="mb-4">Get the latest World Gym news, fitness tips, & exclusive offers delivered straight to your inbox.</p>
+            <!-- Form -->
+            <form action="#" method="POST" class="row g-3 justify-content-center">
+                <div class="col-md-3">
+                    <input type="text" class="form-control border-danger" placeholder="First Name*" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control border-danger" placeholder="Last Name*" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="email" class="form-control border-danger" placeholder="Email Address*" required>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger fw-bold text-uppercase w-100">Submit</button>
+                </div>
+            </form>
+            <small class="d-block mt-3 text-white-50">
+                By clicking SUBMIT, you agree to the <a href="#" class="text-decoration-underline text-white">Privacy Policy</a> and authorize marketing messages.
+            </small>
+        </div>
+    </section>
+
+    <!-- Social Media Icons -->
+    <section class="text-center pb-3">
+        <div class="container">
+            <a href="#" class="text-white me-3">
+                <i class="fa-brands fa-instagram fa-2x" style="border: 2px solid white; border-radius: 50%; padding: 12px;"></i>
+            </a>
+            <a href="#" class="text-white me-3">
+                <i class="fa-brands fa-facebook fa-2x" style="border: 2px solid white; border-radius: 50%; padding: 12px;"></i>
+            </a>
+            <a href="#" class="text-white me-3">
+                <i class="fa-brands fa-linkedin fa-2x" style="border: 2px solid white; border-radius: 50%; padding: 12px;"></i>
+            </a>
+            <a href="#" class="text-white">
+                <i class="fa-brands fa-youtube fa-2x" style="border: 2px solid white; border-radius: 50%; padding: 12px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Navigation and Copyright -->
+    <section class="text-center py-4 border-top border-secondary">
+        <div class="container">
+            <nav class="mb-3">
+                <a href="#" class="text-white me-4 text-decoration-none fw-bold">Gyms</a>
+                <a href="#" class="text-white me-4 text-decoration-none fw-bold">About</a>
+                <a href="#" class="text-white me-4 text-decoration-none fw-bold">Careers</a>
+                <a href="#" class="text-white me-4 text-decoration-none fw-bold">Shop</a>
+                <a href="#" class="text-white me-4 text-decoration-none fw-bold">Contact</a>
+                <a href="#" class="text-white text-decoration-none fw-bold">Blog</a>
+            </nav>
+            <p class="text-white-50 mb-0">&copy; 2024 All rights reserved. <a href="#" class="text-decoration-underline text-white">Privacy Policy</a></p>
+        </div>
+    </section>
+</footer>
+
+
+<!-- FontAwesome CDN for Social Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+    <!-- Bootstrap Bundle Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
